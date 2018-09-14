@@ -2,6 +2,7 @@
 <head>
 <link rel="stylesheet" href="https://jonudell.info/hlib/hlib.css">
 <script src="https://jonudell.info/hlib/hlib.bundle.js"></script>
+<script src="./index.js"></script>
 <style>
 body { 
   margin: .5in;
@@ -17,7 +18,7 @@ body {
 }
 .mappingContainer {
   width:500px;
-  height:200px;
+  height:100px;
 }
 </style>
 </head>
@@ -55,27 +56,23 @@ the same document.
 Provide a set of URL-DOI mappings like so:
 </p>
     
-<textarea class="mappingContainer formField">
+<textarea id="mapping" class="mappingContainer formField">
 [
 {
   "doi": "10.1097/JOM.0000000000000063",
   "url": "http://europepmc.org/abstract/MED/24806729"
-  },
-{
-  "doi": "10.1371/journal.pone.0117912",
-  "url": "http://europepmc.org/abstract/MED/25658111"
   }
 ]
 </textarea>  
 
 <p>
-Then click the Go button. <button>Go</button>  
+Then click the Go button. <button onclick="go()">Go</button>  
 </p>
 
 <script>
 hlib.createUserInputForm(hlib.getById('userContainer'));
+hlib.createGroupInputForm(hlib.getById('groupContainer'));
 if (! hlib.getToken()) {
-  hlib.createGroupInputForm(hlib.getById('groupContainer'));
   hlib.createApiTokenInputForm(hlib.getById('tokenContainer'));
 }
 </script>
