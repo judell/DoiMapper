@@ -26,13 +26,18 @@ let payload = hlib.createAnnotationPayload(params)
 let _payload = JSON.parse(payload)
 _payload.document['highwire'] = {"doi": [ doi ] }
 payload = JSON.stringify(_payload)
-console.log(JSON.stringify(_payload,null, 2))
 return payload
 }
 
 function postAnnotation(payload) {
   hlib.postAnnotation(payload)
     .then( data => {
-      console.log(data.response)
+      let _response = JSON.parse(data.response)
+      console.log(`created ${_response.id}`)
+      hlib.deleteAnnotation(_response.id)
+        .then( data => {
+          let _response = JSON.parse(data.response)
+          console.log(`deleted ${_response.id}`)
+        })
     })
 }
