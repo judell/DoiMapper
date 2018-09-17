@@ -6,6 +6,7 @@
 <style>
 body { 
   margin: .5in;
+  margin-top:.25in;
 }
 .formContainer {
   border-left: solid;
@@ -17,8 +18,8 @@ body {
   padding-left: 20px;  
 }
 .mappingContainer {
-  width:500px;
-  height:100px;
+  width:600px;
+  height:160px;
 }
 </style>
 </head>
@@ -32,38 +33,52 @@ body {
   <div class="formField" id="tokenContainer"></div>
 </div>
 
-<h2>What it does</h2>
+<div class="backstory">
 
-<p>
-For each DOI-URL pair, it posts an annotation to the URL 
-that include the same DOI metadata sent by the Hypothesis
-client.
-</p>
+  <h2>What it does</h2>
 
-<h2>Why do this?</h2>
+  <p>
+  For each DOI-URL pair, it posts an annotation to the URL 
+  that include the same DOI metadata sent by the Hypothesis
+  client.
+  </p>
 
-<p>
-This tool was created to solve a particular problem
-for EuropePMC, and to provide a foundation for similar 
-efforts to influence the metadata linkages among 
-annotations that target more than one instance of
-the same document.
-</p>
+  <h2>Why do this?</h2>
+
+  <p>
+  This tool was created to solve a particular problem
+  for EuropePMC, and to provide a foundation for similar 
+  efforts to influence the metadata linkages among 
+  annotations that target more than one instance of
+  the same document.
+  </p>
+
+</div>
 
 <h2>How it works</h2>
 
 <p>
 Provide a set of URL-DOI mappings like so:
 </p>
-    
-<textarea id="mapping" class="mappingContainer formField">
-[
-{
+
+<div class="controls">
+  <div>
+    <p>
+      <input type="radio" name="format" value="json"> json
+      <input type="radio" name="format" value="url"> url
+    </p>
+    <textarea id="mapping" class="mappingContainer formField">
+[{
   "doi": "10.1006/exnr.2001.7815",
   "url": "http://europepmc.org/abstract/MED/11716570"
-  }
-]
-</textarea>  
+  }]
+
+...OR...
+
+https://cors-anywhere.herokuapp.com/http://jonudell.net/data/finalmappings.json
+    </textarea>
+  </div>
+</div>
 
 <p>
 Then click the Go button. <button onclick="go()">Go</button>  
