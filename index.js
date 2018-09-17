@@ -1,18 +1,49 @@
 function go() {
-  let mapping
 
-  try {
-    let mappingJson = hlib.getById('mapping').value
-    mapping = JSON.parse(mappingJson)
-  } catch (e) {
-    alert(e)
+  if (! getRadioVal('format')) {
+    alert('Please choose json or url and provide corresponding input')
+    return
   }
 
-  mapping.forEach(m => {
+  let format = getRadioVal('format')
+
+  if (format === 'url') {
+
+    try {
+      let mappingUrl = hlib.getById('mapping').value.trim()
+      fetch(mappingUrl)
+        .then(r => { return r.json() } )
+        .then(map => {
+          processMap(map)
+        })
+    } catch (e) {
+      alert(e)
+    }
+
+  } else {
+    try {
+      let mappingJson = hlib.getById('mapping').value
+      let map = JSON.parse(mappingJson)
+      processMap(map)
+    } catch(e) {
+      alert(e)
+    }
+  }
+
+}
+
+function processMap(map) {
+  let i = 0
+  let timeout = 200
+  map.forEach(m => {
+    i++
     let payload = createPayload(m.doi, m.url)
-    postAnnotation(payload)
+    setTimeout( _ => {
+      postAnnotation(payload)
+    }, timeout)
+    timeout += 500
+    console.log(i)
   })
-  
 }
 
 function createPayload(doi, url) {
@@ -40,4 +71,16 @@ function postAnnotation(payload) {
           console.log(`deleted ${_response.id}`)
         })
     })
+}
+
+function getRadioVal(name) {
+  let val
+  var radios = document.getElementsByName(name)
+  for (var i=0, len=radios.length; i<len; i++) {
+    if ( radios[i].checked ) {
+      val = radios[i].value
+      break
+    }
+  }
+  return val
 }
