@@ -1,8 +1,8 @@
 [
-{"doi":"10.1001/2013.jamapediatrics.107", "url":"http://europepmc.org/abstract/MED/23229753"},
-{"doi":"10.1001/archgenpsychiatry.2011.157", "url":"http://europepmc.org/abstract/MED/22147807"},
-{"doi":"10.1001/archinte.164.21.2335", "url":"http://europepmc.org/abstract/MED/15557412"},
-{"doi":"10.1001/archinte.164.4.401", "url":"http://europepmc.org/abstract/MED/14980991"},
+  {"doi":"10.1001/2013.jamapediatrics.107", "url":"http://europepmc.org/abstract/MED/23229753"},
+  {"doi":"10.1001/archgenpsychiatry.2011.157", "url":"http://europepmc.org/abstract/MED/22147807"},
+  {"doi":"10.1001/archinte.164.21.2335", "url":"http://europepmc.org/abstract/MED/15557412"},
+  {"doi":"10.1001/archinte.164.4.401", "url":"http://europepmc.org/abstract/MED/14980991"},
 {"doi":"10.1001/archinte.168.21.2311", "url":"http://europepmc.org/abstract/MED/19029493"},
 {"doi":"10.1001/archinternmed.2010.378", "url":"http://europepmc.org/abstract/MED/20975013"},
 {"doi":"10.1001/archinternmed.2011.213", "url":"http://europepmc.org/abstract/MED/21670333"},
@@ -5619,6 +5619,5 @@
 {"doi":"10.7860/JCDR/2013/6159.3892", "url":"http://europepmc.org/abstract/MED/24551713"},
 {"doi":"10.7860/JCDR/2014/9393.5112", "url":"http://europepmc.org/abstract/MED/25584309"},
 {"doi":"10.7860/JCDR/2015/11926.6278", "url":"http://europepmc.org/abstract/MED/26436037"},
-{"doi":"10.7860/JCDR/2016/18373.7796", "url":"http://europepmc.org/abstract/MED/27437311"},
-{"doi":"10.9758/cpn.2014.12.3.235", "url":"http://europepmc.org/abstract/MED/25598829"},
+{"doi":"10.7860/JCDR/2016/18373.7796", "url":"http://europepmc.org/abstract/MED/27437311"}
 ]
